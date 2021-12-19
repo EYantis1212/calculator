@@ -1,6 +1,8 @@
+// STARTING STATE
+
 // SELECTORS
 
-const numberBtns = document.querySelectorAll('button .number');
+const numberBtns = document.querySelectorAll('.number');
 const operatorBtns = document.querySelectorAll('button .operator');
 const clearBtns = document.querySelectorAll('button .clear');
 const equalsBtn = document.querySelectorAll('button .equals');
@@ -8,14 +10,14 @@ const posNegBtn = document.querySelectorAll('button .posNeg');
 const dotBtn = document.querySelectorAll('button .dot');
 const displayCurrent = document.getElementById('display-current');
 const displayRunning = document.getElementById('display-running');
-
+console.log(numberBtns);
 // VARIABLES
 operand1 = '';
 operand2 = '';
 
 //LISTENERS
-numberBtns.forEach((i) =>
-	i.addEventListener('click', () => appendNum(button.value))
+numberBtns.forEach((button) =>
+	button.addEventListener('click', () => appendNum(button.value))
 );
 
 // APPEND FUNCTION

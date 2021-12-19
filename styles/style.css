@@ -1,0 +1,94 @@
+/* ROOT AND UNIVERSAL */
+:root {
+	--btn-color-accent: #3aafa9;
+	--calc-color: #2b7a78;
+	--btn-color: #def2f1;
+	--btn-special: #a2ccd3;
+	--screen-color: #17252a;
+	--btn-accent-2: #e74c3c;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: 'Roboto', sans-serif;
+}
+
+/* MAIN DIVS */
+body {
+	height: 100%;
+	width: 100%;
+}
+.main {
+	background-color: var(--btn-color-accent);
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.calculator {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--calc-color);
+	width: 300px;
+	height: fit-content;
+	padding: 1em;
+	border-radius: 10px;
+}
+
+/* SCREEN */
+.display {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--screen-color);
+	width: 100%;
+	height: 130px;
+	border: #17252a 2px solid;
+	border-radius: 10px;
+	margin-bottom: 1em;
+}
+#display-current {
+	text-align: right;
+	width: 100%;
+	height: 65px;
+	font-size: 3em;
+	font-weight: 600;
+	color: var(--btn-special);
+}
+#display-running {
+	width: 100%;
+	height: 65px;
+	font-size: 1em;
+}
+/* BUTTONS */
+.row {
+	width: 100%;
+}
+input {
+	background-color: var(--btn-color);
+	font-size: 2em;
+	width: 65px;
+	height: 65px;
+	border-radius: 50%;
+	border: none;
+	margin: 5px;
+	font-weight: 600;
+}
+.equals {
+	background-color: var(--btn-accent-2);
+}
+.operator {
+	background-color: var(--btn-accent-2);
+}
+.special {
+	background-color: var(--btn-special);
+}
+/* TYPE */
