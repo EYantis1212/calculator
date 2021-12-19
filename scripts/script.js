@@ -14,7 +14,6 @@ console.log(numberBtns);
 // VARIABLES
 operand1 = '';
 operand2 = '';
-
 //LISTENERS
 numberBtns.forEach((button) =>
 	button.addEventListener('click', () => appendNum(button.value))
@@ -22,7 +21,10 @@ numberBtns.forEach((button) =>
 
 // APPEND FUNCTION
 function appendNum(num) {
-	displayCurrent.textContent += num;
+	if (displayCurrent.textContent == 0) {
+		minusZero();
+		displayCurrent.textContent += num;
+	} else displayCurrent.textContent += num;
 }
 // MATH FUNCTIONS
 
@@ -58,8 +60,11 @@ function posNeg(num1) {
 
 // BACKSPACE FUNCTION
 
-// CLEAR FUNCTION
+// CLEAR FUNCTIONS
 
+function minusZero() {
+	displayCurrent.textContent = '';
+}
 // DOT FUNCTION
 
 // OPERATE FUNCTION
