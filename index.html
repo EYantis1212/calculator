@@ -16,10 +16,10 @@
 			<div class="calculator">
 				<div class="display">
 					<div id="display-running"></div>
-                    <div id="display-current">0</div>
+                    <div id="display-current"></div>
                 </div>
 				<div class="row">
-                            <input class='clear special' type="button" value="AC"><input class='back special' type="button" value="&#9003"><input class='special' type="button" value="%"><input class='operator' type="button" value="&#247">
+                            <input class='clear' id='clear' type="button" value="AC"><input class='back special' type="button" value="&#9003"><input id='percent' type="button" value="%"><input class='operator' type="button" value="÷">
                 </div>
 				<div class="row">
                             <input class='number' type="button" value="7"><input class='number' type="button" value="8"><input class='number' type="button" value="9"><input class='operator' type="button" value="x">
@@ -31,11 +31,23 @@
                             <input class='number' type="button" value="1"><input class='number' type="button" value="2"><input class='number' type="button" value="3"><input class='operator' type="button" value="+">
                 </div>
 				<div class="row">
-                    <input class='posNeg special' type="button" value="+/-""><input class='number' type="button" value="0"><input class='dot special' type="button" value="."><input class='equals' type="button" value="=">
+                    <input class='special' id='posNegBtn' type="button" value="+/-"><input class='number' type="button" value="0"><input id='dot' type="button" value="."><input id='equals' type="button" value="=">
                 </div>
 				</div>
 			</div>
 		</div>
+        <footer class="footer">
+            <p>
+                COPYRIGHT ©
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+                ERIC YANTIS
+            </p>
+            <a href="https://github.com/EYantis1212" target="_blank"
+                ><img src="./images/github.png" alt="" />
+            </a>
+        </footer>
 		<script src="./scripts/script.js"></script>
 	</body>
 </html>

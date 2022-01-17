@@ -64,11 +64,15 @@ body {
 	color: var(--btn-special);
 }
 #display-running {
+	margin-top: 1em;
+	text-align: right;
 	width: 100%;
 	height: 65px;
-	font-size: 1em;
+	font-size: 2em;
+	color: var(--btn-special);
 }
 /* BUTTONS */
+
 .row {
 	width: 100%;
 }
