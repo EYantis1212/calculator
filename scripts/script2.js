@@ -9,7 +9,6 @@ const equalsBtn = document.getElementById('equals');
 const posNegBtn = document.getElementById('posNegBtn');
 const dotBtn = document.getElementById('dot');
 const percentBtn = document.getElementById('percent');
-const specialBtns = document.querySelectorAll('special');
 const displayCurrent = document.getElementById('display-current');
 const displayRunning = document.getElementById('display-running');
 const displayOperator = document.getElementById('display-operator');

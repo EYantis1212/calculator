@@ -1,5 +1,3 @@
-//STARTING STATE
-
 // SELECTORS
 const numberBtns = document.querySelectorAll('.number');
 const operatorBtns = document.querySelectorAll('.operator');
@@ -33,9 +31,18 @@ numberBtns.forEach((button) => {
 
 operatorBtns.forEach((button) => {
 	button.addEventListener('click', (e) => {
-		if (operator !== '') {
-			operator = button.value;
-			operate();
+		if (
+			operator === '+' ||
+			operator === '-' ||
+			operator === 'x' ||
+			operator === '÷'
+		) {
+			if (operand1 === 0 || operand1 === '') {
+				operator = button.value;
+				renderValues();
+			} else {
+				operate();
+			}
 		} else {
 			operator = button.value;
 			console.log(operator);
@@ -46,6 +53,13 @@ operatorBtns.forEach((button) => {
 	});
 });
 
+posNegBtn.addEventListener('click', (e) => {
+	if (operand1 > 0) {
+		operand1 = -Math.abs(operand1);
+		renderValues();
+	} else operand1 = Math.abs(operand1);
+	renderValues();
+});
 dotBtn.addEventListener('click', (e) => appendDot());
 
 percentBtn.addEventListener('click', (e) => {
@@ -62,7 +76,9 @@ equalsBtn.addEventListener('click', (e) => {
 clearBtn.addEventListener('click', (e) => clearAll());
 
 backBtn.addEventListener('click', (e) => {
-	operand1 = operand1.slice(0, -1);
+	if (operand1.length > 1) {
+		operand1 = operand1.slice(0, -1);
+	} else operand1 = 0;
 	renderValues();
 });
 
@@ -70,8 +86,10 @@ backBtn.addEventListener('click', (e) => {
 
 // APPEND FUNCTIONS
 function appendNum(num) {
-	operand1 += parseFloat(num);
-	renderValues();
+	if (operand1.length <= 10) {
+		operand1 += parseFloat(num);
+		renderValues();
+	} else throwError('screenLimit');
 }
 
 function appendDot() {
@@ -97,14 +115,18 @@ function operate() {
 			displayNumber = parseFloat(operand2) / parseFloat(operand1);
 			break;
 	}
+	if (displayNumber.length > 8) {
+		displayNumber = displayNumber.toFixed(4);
+	}
 	operand2 = '';
 	operand1 = displayNumber;
 	operator = '';
 	renderValues();
 }
+
 //RENDER FUNCTIONS
 function renderValues() {
-	displayNumber = operand1;
+	displayNumber = Math.abs(operand1).toExponential(8);
 	displayRunning.textContent = operand2 + operator;
 	displayCurrent.textContent = parseFloat(displayNumber);
 }
@@ -115,5 +137,17 @@ function clearAll() {
 	operand1 = 0;
 	operand2 = '';
 	renderValues();
+}
+
+function formatNumber(num) {
+	return num.toFixed(4);
+}
+
+function throwError(err) {
+	clearAll();
+	switch (err) {
+		case 'screenLimit':
+			displayRunning.textContent = 'Input Exceeded Limit';
+	}
 }
 renderValues();

@@ -19,13 +19,13 @@ html {
 
 /* MAIN DIVS */
 body {
-	height: 100%;
+	height: 100vh;
 	width: 100%;
 }
 .main {
 	background-color: var(--btn-color-accent);
-	height: 100vh;
-	width: 100vw;
+	height: 90%;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -40,6 +40,16 @@ body {
 	height: fit-content;
 	padding: 1em;
 	border-radius: 10px;
+}
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	height: 10%;
+	background-color: var(--screen-color);
+	color: var(--btn-color);
+	text-align: center;
 }
 
 /* SCREEN */
@@ -95,4 +105,3 @@ input {
 .special {
 	background-color: var(--btn-special);
 }
-/* TYPE */
